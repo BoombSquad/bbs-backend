@@ -1,6 +1,8 @@
 package com.labengsoftware.engsoftware.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -41,6 +43,16 @@ public class SneakerController {
 		SneakerResponseDTO response = service.create(request);
 
 		return response;
+	}
+	
+	@GetMapping
+	public List<Sneakers> getAll() {
+
+		log.info("Pegando todos os tenis");
+
+		List<Sneakers> page = service.findAll();
+
+		return page;
 	}
 
 	@GetMapping("/{user_id}")

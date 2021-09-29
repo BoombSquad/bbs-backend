@@ -1,7 +1,7 @@
 package com.labengsoftware.engsoftware.service.impl;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -79,9 +79,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserResponseDTO getUser(String user_id) {
+	public Optional<Users> getUser(String user_id) {
 		
-		return null;
+		Optional<Users> user = repo.findById(user_id);
+		
+		return user;
 	}
 
 	@Override

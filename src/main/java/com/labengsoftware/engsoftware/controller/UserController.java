@@ -1,6 +1,8 @@
 package com.labengsoftware.engsoftware.controller;
 
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.labengsoftware.engsoftware.model.Users;
 import com.labengsoftware.engsoftware.model.dto.CreateUserRequestDTO;
 import com.labengsoftware.engsoftware.model.dto.UpdateUserRequestDTO;
 import com.labengsoftware.engsoftware.model.dto.UserResponseDTO;
@@ -42,12 +45,12 @@ public class UserController {
 		}
 		
 		@GetMapping("/{user_id)")
-		public UserResponseDTO getUser(@PathVariable String user_id){
+		public Optional<Users> getUser(@PathVariable String user_id){
 			
 			
 			log.info("Recuperando usuario");
 
-			UserResponseDTO response = service.getUser(user_id);
+			Optional<Users> response = service.getUser(user_id);
 
 
 			return response;

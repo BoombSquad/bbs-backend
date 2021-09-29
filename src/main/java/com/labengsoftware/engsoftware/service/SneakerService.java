@@ -31,6 +31,7 @@ public interface SneakerService {
 	Page<Sneakers> getSneakersByBrand(String brand);
 
 	List<Sneakers> findAll();
+
 	
 
 }
