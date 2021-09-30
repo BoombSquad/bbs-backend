@@ -19,14 +19,23 @@
 		<java.version>11</java.version>
 	</properties>
 
+	<repositories>
+        <repository>
+            <id>myMavenRepo</id>
+            <url>${myMavenRepoReadUrl}</url>
+        </repository>
+    </repositories>
+	
+	
 	<distributionManagement>
 		<repository>
-			<uniqueVersion>false</uniqueVersion>
-			<id>Repo</id>
-			<name>Repo</name>
-			<url>https://mymavenrepo.com/repo/3tBaqopWOLqXPiKq0yzw/</url>
-			<layout>default</layout>
+			<id>myMavenRepo</id>
+			<url>${myMavenRepoWriteUrl}</url>
 		</repository>
+		<snapshotRepository>
+			<id>myMavenRepo</id>
+			<url>${myMavenRepoWriteUrl}</url>
+		</snapshotRepository>
 	</distributionManagement>
 	
 	
