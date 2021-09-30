@@ -3,19 +3,19 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        build 'bbs-backend'
-      }
-    }
-
-    stage('Deploy Artifactory') {
-      steps {
-        echo 'HEHE'
+        build 'bbs-backend-build'
       }
     }
 
     stage('Deploy VM') {
       steps {
-        echo 'HOHO'
+        echo 'Passou da Build hein '
+      }
+    }
+
+    stage('Deploy Artifactory') {
+      steps {
+        build 'bbs-backend-deploy'
       }
     }
 
