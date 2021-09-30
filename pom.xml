@@ -22,7 +22,7 @@
 	<repositories>
         <repository>
             <id>myMavenRepo</id>
-            <url>${myMavenRepoReadUrl}</url>
+            <url>${https://mymavenrepo.com/repo/GbECF9xshIeszq1HE7om/}</url>
         </repository>
     </repositories>
 	
@@ -30,11 +30,11 @@
 	<distributionManagement>
 		<repository>
 			<id>myMavenRepo</id>
-			<url>${myMavenRepoWriteUrl}</url>
+			<url>${https://mymavenrepo.com/repo/3tBaqopWOLqXPiKq0yzw/}</url>
 		</repository>
 		<snapshotRepository>
 			<id>myMavenRepo</id>
-			<url>${myMavenRepoWriteUrl}</url>
+			<url>${https://mymavenrepo.com/repo/3tBaqopWOLqXPiKq0yzw/}</url>
 		</snapshotRepository>
 	</distributionManagement>
 	
