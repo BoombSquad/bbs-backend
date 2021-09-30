@@ -1,15 +1,16 @@
-#
-# Build stage
-#
-FROM maven:3.6.0-jdk-11-slim AS build
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
+FROM maven:3.6.0-jdk-11-slim as BUILD_IMAGE
 
-#
-# Package stage
-#
+RUN mkdir -p /home/
+COPY pom.xml /home/
+COPY src /home/src
+COPY .git /home/.git
+
+WORKDIR /home/
+RUN mvn --file /home/pom.xml clean install package
+
+
 FROM openjdk:11-jre-slim
-COPY --from=build D:/Documentos/Projetos/JAVA/lab-eng-software/BACK/target/bbs-backend-2.2.0.jar /usr/local/lib/bbs-backend-2.2.0.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/bbs-backend-2.2.0.jar"]
+COPY --from=BUILD_IMAGE /home/target/bbs-backend*.jar ./bbs-backend.jar
+ENTRYPOINT java -jar bbs-backend.jar
+
+VOLUME /var/lib/bbs-backend.jar/config

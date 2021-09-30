@@ -1,0 +1,23 @@
+version: '2'
+services:
+    web:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: Backend
+      ports:
+        - "8080:80"
+      
+    db:
+      image: postgres:13.4
+      restart: always
+      container_name: postgres
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=123
+      command: postgres
+      ports:
+        - '5423:5432'
+      volumes: 
+        - ./src/main/resources/schema.sql:/docker-entrypoint-initdb.d/create_tables.sql
+        
