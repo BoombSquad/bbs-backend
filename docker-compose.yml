@@ -2,7 +2,6 @@ version: '2'
 services:
     db:
       image: postgres:13.4
-      restart: always
       container_name: postgres
       environment:
         - POSTGRES_USER=postgres
@@ -13,11 +12,11 @@ services:
       volumes: 
         - ./src/main/resources/schema.sql:/docker-entrypoint-initdb.d/create_tables.sql
         
-    web:
+    bbs:
       build:
         context: .
         dockerfile: Dockerfile
-      container_name: Backend
+      container_name: backend
       ports:
         - "8080:8080"
       
