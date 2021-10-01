@@ -1,6 +1,7 @@
 package com.labengsoftware.engsoftware.test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
 import java.util.UUID;
@@ -16,6 +17,7 @@ import org.springframework.data.domain.Page;
 import com.labengsoftware.engsoftware.controller.SneakerController;
 import com.labengsoftware.engsoftware.model.Sneakers;
 import com.labengsoftware.engsoftware.model.dto.CreateSneakerRequestDTO;
+import com.labengsoftware.engsoftware.model.dto.SneakerResponseDTO;
 import com.labengsoftware.engsoftware.model.dto.UpdateSneakerRequestDTO;
 import com.labengsoftware.engsoftware.repository.SneakerRepository;
 import com.labengsoftware.engsoftware.service.SneakerService;
@@ -70,8 +72,7 @@ public class SneakerTest {
 
 		when(snkr.getId()).thenReturn(SNEAKER_ID);
 		when(repo.saveAndFlush(Mockito.any())).thenReturn(snkr);
-
-		service.create(request);
+		SneakerResponseDTO response = service.create(request);
 
 	}
 
