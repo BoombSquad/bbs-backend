@@ -13,22 +13,22 @@ import com.labengsoftware.engsoftware.model.Sneakers;
 
 public interface SneakerRepository extends JpaRepository<Sneakers, String> {
 
-	@Query(value = "SELECT * FROM Sneakers WHERE Sneakers.user_id = :uid", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
+	@Query(value = "SELECT * FROM sneakers WHERE sneakers.user_id = :uid", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
 	Page<Sneakers> findAllSneakersByUser(Pageable pageable, @Param("uid") String user_id);
 
-	@Query(value = "SELECT * FROM Sneakers WHERE Sneakers.sneakers_size = :ssize", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
+	@Query(value = "SELECT * FROM sneakers WHERE sneakers.sneakers_size = :ssize", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
 	Page<Sneakers> findAllSneakersBySize(Pageable pageable, @Param("ssize") String size);
 	
-	@Query(value = "SELECT * FROM Sneakers WHERE Sneakers.sneakers_brand = :sbrand", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
+	@Query(value = "SELECT * FROM sneakers WHERE sneakers.sneakers_brand = :sbrand", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
 	Page<Sneakers> findAllSneakersByBrand(Pageable pageable, @Param("sbrand") String brand);
 	
-	@Query(value = "SELECT * FROM Sneakers WHERE Sneakers.sneakers_colour = :scolour", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
+	@Query(value = "SELECT * FROM sneakers WHERE sneakers.sneakers_colour = :scolour", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
 	Page<Sneakers> findAllSneakersByColour(Pageable pageable, @Param("scolour") String colour);
 	
-	@Query(value = "SELECT * FROM Sneakers WHERE Sneakers.sneakers_model = :smodel", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
+	@Query(value = "SELECT * FROM sneakers WHERE sneakers.sneakers_model = :smodel", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
 	Page<Sneakers> findAllSneakersByModel(Pageable pageable, @Param("smodel") String model);
 	
-	@Query(value = "SELECT * FROM Sneakers WHERE Sneakers.sneakers_code = :sid", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
+	@Query(value = "SELECT * FROM sneakers WHERE sneakers.sneakers_code = :sid", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
 	Sneakers getById(@Param("sid") BigInteger sneaker_id);
 
 }

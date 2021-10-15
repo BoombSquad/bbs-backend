@@ -1,13 +1,13 @@
 server:
-  port: 8079
+  port: ${PORT:8079}
 spring:
    application:
     name: 'lab-eng-software'
 
    datasource: 
-    url: jdbc:mysql://localhost:3306/mydb
-    username: root
-    password: 1234
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/mydb}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:1234}
     driver-class-name: com.mysql.jdbc.Driver
 
 
