@@ -62,7 +62,7 @@ public class UserTest {
 		request.setSurname(SURNAME);
 
 		when(repo.saveAndFlush(Mockito.any())).thenReturn(user);
-		when(user.getId()).thenReturn(UUID.randomUUID());
+		when(user.getId()).thenReturn(USER_ID);
 
 		assertNotNull(service.create(request));
 
@@ -84,7 +84,7 @@ public class UserTest {
 
 		when(repo.getById(USER_ID)).thenReturn(user);
 		when(repo.saveAndFlush(Mockito.any())).thenReturn(user);
-		when(user.getId()).thenReturn(UUID.randomUUID());
+		when(user.getId()).thenReturn(USER_ID);
 
 		service.update(request, USER_ID);
 		service.update(urequest, USER_ID);

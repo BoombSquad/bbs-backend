@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
 			user.setStatus(UserStatus.ENABLE.keyValue());
 			user = repo.saveAndFlush(user);
 			
-			res.setUid(user.getId().toString());
+			res.setUid(user.getId());
 			res.setTime(LocalDateTime.now().toString());
 			res.setValid(Boolean.TRUE.toString());
 			
@@ -121,7 +121,7 @@ public class UserServiceImpl implements UserService {
 			
 			res.setTime(LocalDateTime.now().toString());
 			res.setValid(Boolean.TRUE.toString());
-			res.setUid(user.getId().toString());
+			res.setUid(user.getId());
 			
 		} catch (Exception e) {
 			throw new HttpServerErrorException(HttpStatus.BAD_REQUEST, "could not update user" + e);

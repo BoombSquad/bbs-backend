@@ -1,29 +1,26 @@
 package com.labengsoftware.engsoftware.model;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
+import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Setter;
 
 
 @Setter
 @Entity
-@Table
+@Table(name="Users")
 public class Users {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Type(type="org.hibernate.type.PostgresUUIDType")
-	@Column(nullable = false , name = "user_id", columnDefinition = "uuid")
-	private UUID id;
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@Column(nullable = false , name = "user_id", unique = true)
+	private String id;
 
 	@Column(nullable = false , name = "user_name")
 	private String name;
@@ -43,10 +40,10 @@ public class Users {
 	@Column(nullable = false , name = "user_address")
 	private String address;
 	
-	@Column(name = "user_storeName")
+	@Column(name = "user_storename")
 	private String storeName;
 	
-	@Column(nullable = false , name = "user_documentNumber")
+	@Column(nullable = false , name = "user_documentnumber")
 	private String documentNumber;
 	
 	@Column(nullable = false , name = "user_status")
@@ -61,7 +58,7 @@ public class Users {
 	@Column(name = "deleted_at")
 	private String deletedAt;
 	
-	public UUID getId() {
+	public String getId() {
 		return id;
 	}
 

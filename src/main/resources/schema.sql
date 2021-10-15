@@ -16,10 +16,9 @@ selled_at VARCHAR(50),
 deleted_at VARCHAR(50)
 );
 
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 DROP TABLE IF EXISTS Users;  
 CREATE TABLE Users (  
-user_id UUID PRIMARY KEY,
+user_id VARCHAR(36) PRIMARY KEY,
 user_name VARCHAR(50) NOT NULL,  
 user_pass VARCHAR(50) NOT NULL,
 user_surname VARCHAR(50) NOT NULL,
