@@ -1,10 +1,8 @@
 package com.labengsoftware.engsoftware.test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
-import java.util.UUID;
+import java.math.BigInteger;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +27,7 @@ public class SneakerTest {
 
 	private static final String USER_UUID = "ff8878f8-12f8-46af-be7a-e058224f3189";
 
-	private static final Integer SNEAKER_ID = 5;
+	private static final BigInteger SNEAKER_ID = new BigInteger("5");
 
 	private static final String SIZE = "11.1";
 
@@ -90,7 +88,7 @@ public class SneakerTest {
 		request.setUid(USER_UUID);
 		request.setPrice(PRICE);
 
-		when(repo.getById(Mockito.anyInt())).thenReturn(snkr);
+		when(repo.getById(SNEAKER_ID)).thenReturn(snkr);
 		when(repo.saveAndFlush(Mockito.any())).thenReturn(snkr);
 		when(snkr.getId()).thenReturn(SNEAKER_ID);
 
@@ -103,7 +101,7 @@ public class SneakerTest {
 	void sneakerDelete() {
 
 		when(repo.saveAndFlush(Mockito.any())).thenReturn(snkr);
-		when(repo.getById(Mockito.anyInt())).thenReturn(snkr);
+		when(repo.getById(SNEAKER_ID)).thenReturn(snkr);
 
 		service.delete(SNEAKER_ID);
 

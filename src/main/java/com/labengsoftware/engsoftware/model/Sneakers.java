@@ -1,5 +1,7 @@
 package com.labengsoftware.engsoftware.model;
 
+import java.math.BigInteger;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,9 +20,9 @@ import lombok.Setter;
 public class Sneakers {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable = false , name = "sneakers_code")
-	private Integer id;
+	private BigInteger id;
 	
 	@Column(nullable = false , name = "user_id")
 	private String uid;

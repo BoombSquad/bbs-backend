@@ -1,5 +1,6 @@
 package com.labengsoftware.engsoftware.service.impl;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -143,7 +144,7 @@ public class SneakerServiceImpl implements SneakerService {
 	}
 
 	@Override
-	public SneakerResponseDTO update(Integer sneaker_id, UpdateSneakerRequestDTO urequest) {
+	public SneakerResponseDTO update(BigInteger sneaker_id, UpdateSneakerRequestDTO urequest) {
 
 		SneakerResponseDTO res = new SneakerResponseDTO();
 		Sneakers snkr = repo.getById(sneaker_id);
@@ -189,7 +190,7 @@ public class SneakerServiceImpl implements SneakerService {
 	}
 
 	@Override
-	public SneakerResponseDTO delete(Integer sneaker_id) {
+	public SneakerResponseDTO delete(BigInteger sneaker_id) {
 
 		SneakerResponseDTO res = new SneakerResponseDTO();  
 		Sneakers snkr = repo.getById(sneaker_id);
@@ -222,7 +223,7 @@ public class SneakerServiceImpl implements SneakerService {
 	}
 
 	@Override
-	public SneakerResponseDTO sell(Integer sneaker_id) {
+	public SneakerResponseDTO sell(BigInteger sneaker_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

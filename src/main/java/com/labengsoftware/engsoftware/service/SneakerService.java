@@ -1,6 +1,7 @@
 package com.labengsoftware.engsoftware.service;
 
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -14,11 +15,11 @@ public interface SneakerService {
 	
 	SneakerResponseDTO create(CreateSneakerRequestDTO request);
 	
-	SneakerResponseDTO update(Integer sneaker_id, UpdateSneakerRequestDTO urequest);
+	SneakerResponseDTO update(BigInteger sneaker_id, UpdateSneakerRequestDTO urequest);
 	
-	SneakerResponseDTO delete(Integer sneaker_id);
+	SneakerResponseDTO delete(BigInteger sneaker_id);
 
-	SneakerResponseDTO sell(Integer sneaker_id);
+	SneakerResponseDTO sell(BigInteger sneaker_id);
 	
 	Page<Sneakers> getSneakersByUser(String user_id);
 

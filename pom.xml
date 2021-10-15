@@ -7,16 +7,17 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.3</version>
-
 	</parent>
+	
 	<groupId>com.eng-software</groupId>
 	<artifactId>bbs-backend</artifactId>
+	<packaging>war</packaging>
 	<version>2.3.0</version>
 
 	<name>eng-software</name>
 	<description>Software engeneering project</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 
 

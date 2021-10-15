@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS SNEAKERS;  
 CREATE TABLE SNEAKERS (  
-sneakers_code INT PRIMARY KEY,  
+sneakers_code BIGINT PRIMARY KEY,  
 user_id VARCHAR(50) NOT NULL,
 sneakers_name VARCHAR(50) NOT NULL,  
 sneakers_price VARCHAR(50) NOT NULL,
