@@ -21,7 +21,7 @@ public class Sneakers {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(nullable = false , name = "sneakers_code")
+	@Column(name = "sneakers_code")
 	private BigInteger id;
 	
 	@Column(nullable = false , name = "user_id")
