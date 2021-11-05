@@ -5,10 +5,12 @@ spring:
     name: 'lab-eng-software'
 
    datasource: 
+
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres:5432/postgres}
     username: ${SPRING_DATASOURCE_USERNAME:docker}
     password: ${SPRING_DATASOURCE_PASSWORD:docker}
     driver-class-name: org.postgresql.Driver
+
 
 spring.jpa:
   hibernate:
