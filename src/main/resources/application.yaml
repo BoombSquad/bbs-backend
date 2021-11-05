@@ -5,12 +5,16 @@ spring:
     name: 'lab-eng-software'
 
    datasource: 
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/mydb}
-    username: ${SPRING_DATASOURCE_USERNAME:root}
-    password: ${SPRING_DATASOURCE_PASSWORD:1234}
-    driver-class-name: com.mysql.jdbc.Driver
-
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres:5432/postgres}
+    username: ${SPRING_DATASOURCE_USERNAME:docker}
+    password: ${SPRING_DATASOURCE_PASSWORD:docker}
+    driver-class-name: org.postgresql.Driver
 
 spring.jpa:
   hibernate:
-    ddl-auto: none
+    ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:none}
+  show-sql: false
+  properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQL81Dialect
