@@ -2,8 +2,6 @@ package com.labengsoftware.engsoftware.test;
 
 import static org.mockito.Mockito.when;
 
-import java.math.BigInteger;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -27,7 +25,7 @@ public class SneakerTest {
 
 	private static final String USER_UUID = "ff8878f8-12f8-46af-be7a-e058224f3189";
 
-	private static final BigInteger SNEAKER_ID = new BigInteger("5");
+	private static final String SNEAKER_ID = "5";
 
 	private static final String SIZE = "11.1";
 

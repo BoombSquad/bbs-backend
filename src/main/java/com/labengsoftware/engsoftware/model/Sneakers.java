@@ -1,11 +1,8 @@
 package com.labengsoftware.engsoftware.model;
 
-import java.math.BigInteger;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,8 +21,8 @@ public class Sneakers {
 	@Id
 	@GeneratedValue(generator="system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
-	@Column(nullable = false , name = "sneakers_id", unique = true)
-	private BigInteger id;
+	@Column(nullable = false , name = "sneakers_code", unique = true)
+	private String id;
 	
 	@Column(nullable = false , name = "user_id")
 	private String uid;

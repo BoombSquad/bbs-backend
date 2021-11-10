@@ -16,4 +16,4 @@ COPY --from=BUILD_IMAGE /home/target/bbs-backend*.jar ./bbs-backend.jar
 ENTRYPOINT java -jar bbs-backend.jar
 
 VOLUME /var/lib/bbs-backend.jar/config
-EXPOSE 8079
+EXPOSE 8080

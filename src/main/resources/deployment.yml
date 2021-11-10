@@ -1,0 +1,51 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: bbs-back
+  labels:
+    name: bbs-back
+spec:
+  ports:
+    - nodePort: 30160
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: bbs-back
+  type: NodePort
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bbs-back
+spec:
+  selector:
+    matchLabels:
+      app: bbs-back
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bbs-back
+    spec:
+      containers:
+        - name: bbs-back
+          image: pedroappel/bombsquad_repo:spring
+          ports:
+            - containerPort: 8080
+          env:   # Setting Enviornmental Variables
+            - name: DB_HOST   # Setting Database host address from configMap
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-conf  # name of configMap
+                  key: host
+            - name: DB_NAME  # Setting Database name from configMap
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-conf
+                  key: name
+            - name: POSTGRES_USER  # Setting Database username from Secret
+              value: "root"
+            - name: POSTGRES_PASSWORD # Setting Database password from Secret
+              value: "123"

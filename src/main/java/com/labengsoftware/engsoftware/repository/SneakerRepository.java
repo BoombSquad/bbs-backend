@@ -1,8 +1,6 @@
 package com.labengsoftware.engsoftware.repository;
 
 
-import java.math.BigInteger;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -29,6 +27,6 @@ public interface SneakerRepository extends JpaRepository<Sneakers, String> {
 	Page<Sneakers> findAllSneakersByModel(Pageable pageable, @Param("smodel") String model);
 	
 	@Query(value = "SELECT * FROM sneakers WHERE sneakers.sneakers_code = :sid", countQuery = "SELECT count(*) FROM Users", nativeQuery = true)
-	Sneakers getById(@Param("sid") BigInteger sneaker_id);
+	Sneakers getById(@Param("sid") String sneaker_id);
 
 }

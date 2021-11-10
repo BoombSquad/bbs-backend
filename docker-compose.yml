@@ -14,20 +14,20 @@ services:
           - '5432:5432'
         volumes:
           - ./src/main/resources/db:/docker-entrypoint-initdb.d/
-    bbs:
-      build:
-        context: .
-        dockerfile: Dockerfile
-      container_name: backend
-      ports:
-        - "8080:8079"
-      depends_on:
-      - postgres
-      environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=123
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    # bbs:
+    #   build:
+    #     context: .
+    #     dockerfile: Dockerfile
+    #   container_name: backend
+    #   ports:
+    #     - "8079:8079"
+    #   depends_on:
+    #   - postgres
+    #   environment:
+    #   - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+    #   - SPRING_DATASOURCE_USERNAME=root
+    #   - SPRING_DATASOURCE_PASSWORD=123
+    #   - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       
 # Names our volume
 volumes:

@@ -1,7 +1,6 @@
 package com.labengsoftware.engsoftware.controller;
 
 
-import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -107,7 +106,7 @@ public class SneakerController {
 	}
 	
 	@PatchMapping("/{sneaker_id}")
-	public SneakerResponseDTO updateSneaker(@PathVariable BigInteger sneaker_id, UpdateSneakerRequestDTO request) {
+	public SneakerResponseDTO updateSneaker(@PathVariable String sneaker_id, UpdateSneakerRequestDTO request) {
 
 		log.info("Atualizando tenis do usuario");
 
@@ -117,7 +116,7 @@ public class SneakerController {
 	}
 	
 	@DeleteMapping("/{sneaker_id}")
-	public SneakerResponseDTO deleteSneaker(@PathVariable BigInteger sneaker_id) {
+	public SneakerResponseDTO deleteSneaker(@PathVariable String sneaker_id) {
 
 		log.info("Deletando tenis");
 
