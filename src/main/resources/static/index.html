@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/login.css"/>
+        <meta charset = "UTF-8"/>
+        <title>BBSnkrs</title>
+        <style>
+            body{
+                background-image: url("img/wpp1.jpg");
+                background-size: 100%;
+            } 
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <form>
+
+            <div class= "wrap-login">
+                <div class="login">
+                    <div style="text-align: center;">
+                        <img src="/img/logo.png" alt="logo" width="220px">
+                    </div>
+                    <h1>Log In</h1>
+    
+                    <div class= "loginInput">
+                        <b>Login:</b><br>
+                        <input type="text" class= "caixinha" placeholder="Digite seu nome de usuário" name="nome" required>
+                    </div>
+                    
+                    <div class= "loginInput">
+                        <b>Senha:</b><br>
+                        <input type="password" class= "caixinha" placeholder="Digite sua senha" name="psw" required>
+                    </div>
+                    <div class="buttonContainer">
+                        <div class="buttonContainer">
+                            <button type="submit" class="button">Entrar</button>
+                        </div>
+    
+                        <div class="buttonContainer">
+                            <button type="button" onclick="location.href='cadastre-se.html'" class="button">Cadastre-se</button>
+                        </div>
+    
+                    </div>
+                    
+    
+                </div>
+            </div>
+
+        </form>
+    </body>
+</html>

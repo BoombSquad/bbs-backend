@@ -1,0 +1,84 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.wrap-login{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    width: 25vw;
+    min-width: 300px;
+    min-height: 50vh;
+    border-radius: 20px;
+    box-sizing: border-box;
+    position:relative;
+}
+
+.login h1{
+    text-align: center;
+}
+.loginInput{
+    width: 100%;
+    box-sizing: border-box;
+}
+.cadastroInput{
+    width: calc(50% - 20px);
+    margin: 10px 10px;
+}
+.loginInput input{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.caixinha{
+    margin: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background-color: #D3D3D3;
+    box-sizing:border-box;
+}
+
+.form-cadastro{
+    display:flex;
+    flex-wrap: wrap;
+}
+.buttonContainer{
+    padding: 3px;
+    text-align: right;
+}
+
+.button{
+    background-color: darkgray;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    border: 2px black solid
+}
+
+button:hover{
+    color:black;
+    background-color: white;
+    border: 2px black solid
+}
+.login > div:first-child{
+    position:absolute;
+    top:-60px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+#loginButton{
+    width:91.5px;
+}

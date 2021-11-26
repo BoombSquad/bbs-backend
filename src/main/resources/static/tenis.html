@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/tab.css"/>
+        <link rel="stylesheet" href="css/forms.css"/>
+        <meta charset = "UTF-8"/>
+        <title>BBSnkrs</title>
+    </head>
+
+    <body>
+        <header>
+            <div class= "logo">
+                <a href="index.html"><img src="./img/logo.png" class = "logo"/></a>
+            </div>
+
+            <div class="pesquisa">
+                <input type="text" placeholder="Busca...">
+            </div>
+
+            <nav id= "menu">
+                <ul>
+                    <li><a href = "tenis.html"> Tênis</a></li>
+                </ul>
+            </nav>
+
+            <img id= "linha" src="./img/linha.jpg" class = "linha"/> 
+        </header>
+        
+        <div class= "tab">
+            <button class="tablinks" onclick="abreAba(event, 'Perfil')" id="defaultOpen">Perfil</button>
+            <button class="tablinks" onclick="abreAba(event, 'NovoTenis')">Novo Tenis</button>
+            <button class="tablinks" onclick="abreAba(event, 'MeusTenis')">Meus Tenis</button>
+        </div>
+
+        <div id="Perfil" class="tabcontent">
+            <img src="img/perfil.png" class= "perfil">
+            <h1>Nome</h1>
+            <h2>Nome de Usuário</h2>
+        </div>
+          
+          <div id="NovoTenis" class="tabcontent">
+            <form>
+                <div class="cadastro">
+                  <h1>Novo Tenis</h1>
+                  <hr>
+
+                  <label for="name"><b>Nome</b></label>
+                  <input type="text" placeholder="Digite o nome do tênis" name="modelo" required>
+                  
+                  <label for="size"><b>Tamanho</b></label>
+                  <input type="text" placeholder="Digite o tamanho do tênis" name="modelo" required>
+
+                  <label for="condition"><b>Condição</b></label>
+                  <input type="text" placeholder="Digite a condição do tênis" name="modelo" required>
+
+                  <label for="price"><b>Preço</b></label>
+                  <input type="text" placeholder="Digite o preço do tênis" name="modelo" required>
+
+                  <label for="model"><b>Modelo</b></label>
+                  <input type="text" placeholder="Digite o modelo do tênis" name="modelo" required>
+              
+                  <label for="brand"><b>Marca</b></label>
+                  <input type="text" placeholder="Digite a marca do tênis" name="brand" required>
+
+                  <label for="color"><b>Cor</b></label>
+                  <input type="text" placeholder="Digite a cor do tênis" name="modelo" required>
+                  
+                  <div class="clearfix">
+                    <button type="submit" class="blogin">Criar</button>
+                  </div>
+    
+                </div>
+              </form> 
+          </div>
+          
+          <div id="MeusTenis" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+          </div>
+        
+        <script src="js/tab.js"></script>  
+
+    </body>
+</html>
