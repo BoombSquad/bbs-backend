@@ -51,12 +51,12 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+		<!--SPRING 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-
+		-->
 		<!--Apache -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
